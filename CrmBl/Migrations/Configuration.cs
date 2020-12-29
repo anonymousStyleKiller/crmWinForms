@@ -10,7 +10,7 @@ namespace CrmBl.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
     } 
 }
