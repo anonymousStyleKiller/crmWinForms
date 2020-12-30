@@ -6,19 +6,20 @@ namespace CrmUI
 {
     public partial class ProductForm_Load : Form
     {
-        public Product Product { get; set; }
         public ProductForm_Load()
         {
             InitializeComponent();
         }
-        
-        public ProductForm_Load(Product product): this()
+
+        public ProductForm_Load(Product product) : this()
         {
             Product = product;
             textBox1.Text = Product.Name;
             numericUpDown1.Value = Product.Price;
             numericUpDown2.Value = Product.Count;
         }
+
+        public Product Product { get; set; }
 
         private void button1_Click(object sender, EventArgs e)
         {

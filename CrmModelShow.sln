@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmBl", "CrmBl\CrmBl.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmUI", "CrmUI\CrmUI.csproj", "{47596DFB-957A-498E-8067-CAE7AD899375}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmBlTests", "CrmBlTests\CrmBlTests.csproj", "{4D92A2FD-0B56-483A-898B-A4F64220FF01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{47596DFB-957A-498E-8067-CAE7AD899375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47596DFB-957A-498E-8067-CAE7AD899375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47596DFB-957A-498E-8067-CAE7AD899375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D92A2FD-0B56-483A-898B-A4F64220FF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D92A2FD-0B56-483A-898B-A4F64220FF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D92A2FD-0B56-483A-898B-A4F64220FF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D92A2FD-0B56-483A-898B-A4F64220FF01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -51,10 +51,37 @@ namespace CrmUI
             }
             else if (typeof(T) == typeof(Seller))
             {
+                if (_set.Find(id) is Seller seller)
+                {
+                    // Edit form product at the new form
+                    var form = new SellerForm_Load(seller);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        seller = form.Seller;
+                        _db.SaveChanges();
+                        dataGridView.Update();
+                    }
+                }
             }
             else if (typeof(T) == typeof(Customer))
             {
+                if (_set.Find(id) is Customer customer)
+                {
+                    // Edit form product at the new form
+                    var form = new CustomerForm_Load(customer);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        customer = form.Customer;
+                        _db.SaveChanges();
+                        dataGridView.Update();
+                    }
+                }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
