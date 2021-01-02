@@ -50,16 +50,16 @@ namespace CrmBlTests
            
            
            var cart2 = new Cart(customer2);
-           cart1.Add(product1);
-           cart1.Add(product1);
+           cart2.Add(product1);
+           cart2.Add(product1);
 
            var cashDesk = new CashDesk(1, seller);
            cashDesk.MaxQueueLenght = 10;
            cashDesk.Endqueue(cart1);
            cashDesk.Endqueue(cart2);
 
-           var cartExpectedRes1 = 300;
-           var cartExpectedRes2 = 200;
+           decimal cartExpectedRes1 = 300;
+           decimal cartExpectedRes2 = 200;
            
            // act
            var carActualRes1 = cashDesk.Dequeue();
@@ -67,8 +67,8 @@ namespace CrmBlTests
            // assert
            Assert.AreEqual(carActualRes1, cartExpectedRes1);
            Assert.AreEqual(carActualRes2, cartExpectedRes2);
-           Assert.AreEqual(8, product1.Count);
-           Assert.AreEqual(18, product1.Count);
+           Assert.AreEqual(7, product1.Count);
+           Assert.AreEqual(19, product2.Count);
         }
     }
 }
