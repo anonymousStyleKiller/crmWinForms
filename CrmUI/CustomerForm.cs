@@ -4,15 +4,15 @@ using CrmBl.Model;
 
 namespace CrmUI
 {
-    public partial class CustomerForm_Load : Form
+    public partial class CustomerFormLoad : Form
     {
         public Customer Customer { get; set; }
-        public CustomerForm_Load()
+        public CustomerFormLoad()
         {
             InitializeComponent();
         }
         
-        public CustomerForm_Load(Customer customer): this()
+        public CustomerFormLoad(Customer customer): this()
         {
             Customer = customer;
             textBox1.Text = customer.Name;

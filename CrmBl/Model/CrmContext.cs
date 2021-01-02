@@ -7,7 +7,7 @@ namespace CrmBl.Model
         public CrmContext() : base("CrmConnection")
         {
         }
-
+        
         public DbSet<Check> Checks { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }

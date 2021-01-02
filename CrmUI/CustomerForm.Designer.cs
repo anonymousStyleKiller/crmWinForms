@@ -2,7 +2,7 @@
 
 namespace CrmUI
 {
-    partial class SellerFormLoad
+    partial class CustomerFormLoad
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@ namespace CrmUI
             this.label1.TabIndex = 2;
             this.label1.Text = "Введите имя";
             // 
-            // SellerForm_Load
+            // CustomerForm_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,8 +71,8 @@ namespace CrmUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "SellerFormLoad";
-            this.Text = "SellerForm";
+            this.Name = "CustomerFormLoad";
+            this.Text = "CusstomerForm";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

@@ -4,14 +4,14 @@ using CrmBl.Model;
 
 namespace CrmUI
 {
-    public partial class ProductForm_Load : Form
+    public partial class ProductFormLoad : Form
     {
-        public ProductForm_Load()
+        public ProductFormLoad()
         {
             InitializeComponent();
         }
 
-        public ProductForm_Load(Product product) : this()
+        public ProductFormLoad(Product product) : this()
         {
             Product = product;
             textBox1.Text = Product.Name;

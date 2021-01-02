@@ -17,8 +17,7 @@ namespace CrmBl.Model
 
         public IEnumerator GetEnumerator()
         {
-            foreach (var p in Products.Keys)
-                yield return p;
+            return Products.Keys.GetEnumerator();
         }
 
         public void Add(Product product)
@@ -27,7 +26,6 @@ namespace CrmBl.Model
                 Products[product] = ++count;
             else
                 Products.Add(product, 1);
-            ;
         }
 
         public List<Product> GetAll()

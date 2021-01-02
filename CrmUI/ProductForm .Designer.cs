@@ -2,7 +2,7 @@
 
 namespace CrmUI
 {
-    partial class ProductForm_Load
+    partial class ProductFormLoad
     {
         /// <summary>
         /// Required designer variable.
@@ -117,7 +117,7 @@ namespace CrmUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "ProductForm_Load";
+            this.Name = "ProductFormLoad";
             this.Text = "ProductForm";
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDown2)).EndInit();

@@ -40,7 +40,7 @@ namespace CrmUI
                 if (_set.Find(id) is Product product)
                 {
                     // Edit form product at the new form
-                    var form = new ProductForm_Load(product);
+                    var form = new ProductFormLoad(product);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         product = form.Product;
@@ -54,7 +54,7 @@ namespace CrmUI
                 if (_set.Find(id) is Seller seller)
                 {
                     // Edit form product at the new form
-                    var form = new SellerForm_Load(seller);
+                    var form = new SellerFormLoad(seller);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         seller = form.Seller;
@@ -68,7 +68,7 @@ namespace CrmUI
                 if (_set.Find(id) is Customer customer)
                 {
                     // Edit form product at the new form
-                    var form = new CustomerForm_Load(customer);
+                    var form = new CustomerFormLoad(customer);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         customer = form.Customer;
