@@ -5,8 +5,13 @@ namespace CrmBl.Model
 {
     public class CashDesk
     {
-         CrmContext _dB = new CrmContext();
+        private readonly CrmContext _dB = new CrmContext();
 
+        /// <summary>
+        /// Инициализация кассового аппарата 
+        /// </summary>
+        /// <param name="number">Номер апарата</param>
+        /// <param name="seller">Продавец</param>
         public CashDesk(int number, Seller seller)
         {
             Number = number;
@@ -17,20 +22,31 @@ namespace CrmBl.Model
         public int Number { get; set; }
         public Seller Seller { get; set; }
         public Queue<Cart> Queue { get; set; }
-        public int MaxQueueLenght { get; set; }
+        public int MaxQueueLength { get; set; }
         public int ExitCustomer { get; set; }
         public bool IsModel { get; set; }
-
+        public int Count => Queue.Count;
+        
+        /// <summary>
+        /// Добавление в конец очереди кассового апарата корзину
+        /// </summary>
+        /// <param name="cart">Корзина</param>
         public void Endqueue(Cart cart)
         {
-            if (Queue.Count <= MaxQueueLenght) Queue.Enqueue(cart);
+            if (Queue.Count <= MaxQueueLength) Queue.Enqueue(cart);
             else ExitCustomer++;
         }
-
-
+        /// <summary>
+        /// Получение суммы 
+        /// </summary>
+        /// <returns>decimal sum</returns>
         public decimal Dequeue()
         {
             decimal sum = 0;
+            if (Queue.Count == 0)
+            {
+                return 0;
+            }
             var card = Queue.Dequeue();
             if (card == null) return sum;
             var check = new Check

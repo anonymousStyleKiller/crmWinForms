@@ -52,9 +52,10 @@
 		</Reference>
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="CartTest.cs" />
+		<Compile Include="CartTests.cs" />
 		<Compile Include="CashDeskTests.cs" />
 		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="ShopComputerModelTests.cs" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\CrmBl\CrmBl.csproj">

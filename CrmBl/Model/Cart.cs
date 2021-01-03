@@ -6,6 +6,10 @@ namespace CrmBl.Model
 {
     public class Cart : IEnumerable
     {
+        /// <summary>
+        /// Инициализация корзины
+        /// </summary>
+        /// <param name="customer"></param>
         public Cart(Customer customer)
         {
             Customer = customer;
@@ -20,6 +24,10 @@ namespace CrmBl.Model
             return Products.Keys.GetEnumerator();
         }
 
+        /// <summary>
+        /// Добавление продукции
+        /// </summary>
+        /// <param name="product"></param>
         public void Add(Product product)
         {
             if (Products.TryGetValue(product, out var count))
@@ -28,6 +36,10 @@ namespace CrmBl.Model
                 Products.Add(product, 1);
         }
 
+        /// <summary>
+        /// Возвращает всю продукцию 
+        /// </summary>
+        /// <returns></returns>
         public List<Product> GetAll()
         {
             return this.Cast<Product>().ToList();
