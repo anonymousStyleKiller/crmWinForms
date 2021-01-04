@@ -1,4 +1,5 @@
-﻿using CrmBl.Model;
+﻿using System.Threading;
+using CrmBl.Model;
 using NUnit.Framework;
 
 namespace CrmBlTests
@@ -11,6 +12,7 @@ namespace CrmBlTests
         {
             var model = new ShopComputerModel();
             model.Start();
+            Thread.Sleep(10000);
         }
     }
 }

@@ -19,14 +19,15 @@ namespace CrmBl.Model
             Queue = new Queue<Cart>();
         }
 
-        public int Number { get; set; }
-        public Seller Seller { get; set; }
-        public Queue<Cart> Queue { get; set; }
+        public event EventHandler<Check> CheckClosed;
+        private int Number { get; set; }
+        private Seller Seller { get; set; }
+        private Queue<Cart> Queue { get; set; }
         public int MaxQueueLength { get; set; }
-        public int ExitCustomer { get; set; }
-        public bool IsModel { get; set; }
+        private int ExitCustomer { get; set; }
+        private bool IsModel { get; set; }
         public int Count => Queue.Count;
-        
+
         /// <summary>
         /// Добавление в конец очереди кассового апарата корзину
         /// </summary>
@@ -36,6 +37,7 @@ namespace CrmBl.Model
             if (Queue.Count <= MaxQueueLength) Queue.Enqueue(cart);
             else ExitCustomer++;
         }
+
         /// <summary>
         /// Получение суммы 
         /// </summary>
@@ -47,6 +49,7 @@ namespace CrmBl.Model
             {
                 return 0;
             }
+
             var card = Queue.Dequeue();
             if (card == null) return sum;
             var check = new Check
@@ -86,7 +89,10 @@ namespace CrmBl.Model
                     product.Count--;
                 }
 
+            check.Price = sum;
             if (!IsModel) _dB.SaveChanges();
+            CheckClosed?.Invoke(this, check);
+            
             return sum;
         }
     }
